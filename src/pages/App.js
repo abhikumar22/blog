@@ -1,5 +1,7 @@
 import React from 'react';
-import '../css/theme-1.css';
+import '../css/theme-3.css';
+import history from '../routes/history';
+import {STRINGS} from '../utils/constants'
 
 function App() {
   return (
@@ -7,7 +9,7 @@ function App() {
 
 
       <div className="header text-center">
-        <h1 className="blog-name pt-lg-4 mb-0"><a href="index.html">Anthony's Blog</a></h1>
+        <h1 className="blog-name pt-lg-4 mb-0"><a href="index.html">{STRINGS.NAME}</a></h1>
         <nav className="navbar navbar-expand-lg navbar-dark">
 
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
@@ -21,8 +23,7 @@ function App() {
                 src={require("../images/profile.png")} />
 
               <div className="bio mb-3">
-                Hi, my name is Anthony Doe. Briefly introduce yourself here.
-                You can also provide a link to the about page.
+                {STRINGS.PERSONAL_SUMMARY}
         <a href="about.html">Find out more about me</a>
               </div>
               <ul className="social-list list-inline py-3 mx-auto">
@@ -66,8 +67,12 @@ function App() {
                 <input type="email" id="semail" name="semail1" className="form-control mr-md-1 semail"
                   placeholder="Enter email" />
               </div>
-              <button type="submit" className="btn btn-primary">Subscribe</button>
+              
             </form>
+            <button onClick={()=>{
+              history.push('/addpost', {
+              })
+            }} type="submit" className="btn btn-primary mt-3">Subscribe</button>
           </div>
         </div>
         <div className="blog-list px-3 py-5 p-md-5">
