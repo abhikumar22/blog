@@ -1,8 +1,10 @@
 import React from 'react';
 import '../css/theme-8.css';
 import history from '../routes/history';
-import { STRINGS } from '../utils/constants'
+import { STRINGS, SOCIAL_URL, SOCIAL_ICONS } from '../utils/constants'
 import BlogInListComponent from '../components/BlogInListComponent'
+import SocialComponent from '../components/SocialComponent'
+
 
 function App() {
   return (
@@ -22,16 +24,37 @@ function App() {
                 {STRINGS.PERSONAL_SUMMARY}
               </div>
               <div className="bio mb-3">
-                <a 
+                <a
                 // href="about.html"
                 >{STRINGS.KNOW_MORE_ABOUT_ME}</a>
               </div>
               <ul className="social-list list-inline py-3 mx-auto">
-                <li className="list-inline-item"><a href="#"><i className="fab fa-twitter fa-fw"></i></a></li>
-                <li className="list-inline-item"><a href="#"><i className="fab fa-linkedin-in fa-fw"></i></a></li>
-                <li className="list-inline-item"><a href="#"><i className="fab fa-github-alt fa-fw"></i></a></li>
-                <li className="list-inline-item"><a href="#"><i className="fab fa-stack-overflow fa-fw"></i></a></li>
-                <li className="list-inline-item"><a href="#"><i className="fab fa-codepen fa-fw"></i></a></li>
+                <SocialComponent
+                  link={SOCIAL_URL.LINKEDIN}
+                  icons={SOCIAL_ICONS.LINKEDIN}
+                />
+                <SocialComponent
+                  link={SOCIAL_URL.GITHUB}
+                  icons={SOCIAL_ICONS.GITHUB}
+                />
+                <SocialComponent
+                  link={SOCIAL_URL.STACKOVERFLOW}
+                  icons={SOCIAL_ICONS.STACKOVERFLOW}
+
+                />
+                <SocialComponent
+                  link={SOCIAL_URL.FACEBOOK}
+                  icons={SOCIAL_ICONS.FACEBOOK}
+
+                />
+                <SocialComponent
+                  icons={SOCIAL_ICONS.INSTAGRAM}
+                  link={SOCIAL_URL.INSTAGRAM}
+                />
+                <SocialComponent
+                  icons={SOCIAL_ICONS.TWITTER}
+                  link={SOCIAL_URL.TWITTER}
+                />
               </ul>
             </div>
             {/* <ul className="navbar-nav flex-column text-left">
@@ -63,7 +86,9 @@ function App() {
             <div className="intro">{STRINGS.SUBSCRIBE_MESSAGE}</div>
             <form className="signup-form form-inline justify-content-center pt-3">
               <div className="form-group">
-                <label className="sr-only" for="semail">Your email</label>
+                <label className="sr-only"
+                // for="semail"
+                >Your email</label>
                 <input type="email" id="semail" name="semail1" className="form-control mr-md-1 semail"
                   placeholder="Enter email" />
               </div>

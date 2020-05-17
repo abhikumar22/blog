@@ -9,3 +9,21 @@ export const STRINGS = {
     SUBSCRIBE_MESSAGE: "Subscribe and get my latest blog post in your inbox",
     KNOW_MORE_ABOUT_ME: "Want to know more about me"
 };
+
+export const SOCIAL_URL = {
+    GITHUB: "https://github.com/abhikumar22",
+    FACEBOOK: "https://www.facebook.com/abhikr28",
+    LINKEDIN: "https://www.linkedin.com/in/abhikumar22/",
+    TWITTER: "https://twitter.com/abhikumar_22",
+    STACKOVERFLOW: "https://stackoverflow.com/users/7032896/abhikumar22",
+    INSTAGRAM: "https://www.instagram.com/abhikumar_22",
+  };
+
+  export const SOCIAL_ICONS = {
+    GITHUB: "fab fa-github-alt fa-fw",
+    FACEBOOK: "fab fa-facebook fa-fw",
+    LINKEDIN: "fab fa-linkedin-in fa-fw",
+    TWITTER: "fab fa-twitter fa-fw",
+    STACKOVERFLOW: "fab fa-stack-overflow fa-fw",
+    INSTAGRAM: "fab fa-stack-overflow fa-fw",
+  };
