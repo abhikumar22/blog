@@ -1,7 +1,7 @@
 import React from 'react';
 import { URLS, APIS } from '../utils/constants'
 
-import '../css/App.css'
+import '../css/file.css'
 
 
 export default class NotFoundPage extends React.Component {
