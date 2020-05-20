@@ -139,8 +139,9 @@ export default class App extends React.Component {
                 </div>
               </form>
               <button onClick={() => {
-                history.push('/addpost', {
-                })
+                // history.push('/addpost', {
+                // })
+                alert("Feature Coming Soon")
               }} type="submit" className="btn btn-primary mt-3">Subscribe</button>
             </div>
           </div>
