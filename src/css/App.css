@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.imgt{
+  background-image: url("../images/404_not_found.png");
+
+  /* Full height */
+  height: 100vh !important;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
