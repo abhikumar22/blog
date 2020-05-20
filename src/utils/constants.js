@@ -27,3 +27,14 @@ export const SOCIAL_URL = {
     STACKOVERFLOW: "fab fa-stack-overflow fa-fw",
     INSTAGRAM: "fab fa-stack-overflow fa-fw",
   };
+
+
+  export const URLS = {
+    LOCAL:'http://127.0.0.1:8000/',
+    HEROKU:'https://chatappbackend22.herokuapp.com/'
+  };
+
+  export const APIS = {
+    ADD_BLOG:'addBlog',
+    GET_ALL_BLOG:'getAllBlogs',
+  };

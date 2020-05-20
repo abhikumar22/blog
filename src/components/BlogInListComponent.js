@@ -1,6 +1,18 @@
 import React from "react";
 import { STRINGS } from '../utils/constants'
+
+import parse from 'html-react-parser';
+import history from '../routes/history';
 export default class BlogInListComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        
+        this.clickToPush = this.clickToPush.bind(this);
+      }
+    clickToPush=()=> {
+        history.push('/BlogDetail', { blogDetailValues:this.props.dataCurr })
+        // alert("hi"+this.props.dataCurr)
+      }
     render() {
         return (
             <div className="item mb-5">
@@ -25,15 +37,16 @@ export default class BlogInListComponent extends React.Component {
                         <div className="meta mb-1">
                             <span className="date">{this.props.DatePublished}</span>
                             <span className="time">{this.props.ReadingTimeInterval + STRINGS.MIN_READ}</span>
-                            <span className="comment">
+                            {/* <span className="comment">
                                 <a href="#">{this.props.NoOfComments + STRINGS.COMMENTS}</a>
-                            </span>
+                            </span> */}
                         </div>
                         <div className="intro">
                             {this.props.ContentSummary}
                         </div>
-                        <a className="more-link" href="blog-post.html">
-                            Read more &rarr;</a>
+                        <div className="intro ">
+                          <button className="btn btn-warning" onClick={this.clickToPush}>Read More</button>
+                        </div>
                     </div>
                 </div>
             </div>
