@@ -14,6 +14,7 @@ export default class BlogDetail extends React.Component {
     }
     componentDidMount() {
         console.log("hiii", this.props.location.state.blogDetailValues)
+        window.scrollTo(0,0)
     }
     render() {
         return (
