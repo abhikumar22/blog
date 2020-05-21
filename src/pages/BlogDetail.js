@@ -9,7 +9,6 @@ import { STRINGS, SOCIAL_URL, SOCIAL_ICONS, URLS, APIS } from '../utils/constant
 
 
 
-
 export default class BlogDetail extends React.Component {
     constructor(props) {
         super(props);
@@ -22,7 +21,6 @@ export default class BlogDetail extends React.Component {
     render() {
         return (
             <div style={{ width: '100%', height: '100%' }} className="App">
-
                 <div className="col-10 col-sm-10 col-md-6 col-lg-6 col-xl-6" style={{ margin: 'auto', marginTop: 30 }}>
                     <div>
                         <h4><strong>abhikumar.xyz</strong></h4>
@@ -32,7 +30,7 @@ export default class BlogDetail extends React.Component {
                     </div>
                     <hr style={{ marginTop: 30 }} />
                     <div style={{ marginTop: 30 }}>
-                        <h2>Why Every Developer Should Have A Blog</h2>
+                        <h2>{this.props.location.state.blogDetailValues.title}</h2>
                         <div>
                             <p style={{ marginTop: 0, textAlign: 'justify' }} className="text-muted mt-1">Published {processedDate(this.props.location.state.blogDetailValues.created_at)} • {this.props.location.state.blogDetailValues.read_interval_in_minutes} min read</p>
                         </div>
@@ -44,11 +42,10 @@ export default class BlogDetail extends React.Component {
                         className="text-center"
                     >
                         <ul className="social-list list-inline py-3 mx-auto">
-
-                        {/* <li className="list-inline-item"> */}
-                                <footer>
-                                    <small>&copy; Copyright 2020 Abhishek Kumar</small>
-                                </footer>
+                            {/* <li className="list-inline-item"> */}
+                            <footer>
+                                <small>&copy; Copyright 2020 Abhishek Kumar</small>
+                            </footer>
                             {/* </li> */}
                             <SocialComponent
                                 link={SOCIAL_URL.LINKEDIN}
@@ -61,12 +58,10 @@ export default class BlogDetail extends React.Component {
                             <SocialComponent
                                 link={SOCIAL_URL.STACKOVERFLOW}
                                 icons={SOCIAL_ICONS.STACKOVERFLOW}
-
                             />
                             <SocialComponent
                                 link={SOCIAL_URL.FACEBOOK}
                                 icons={SOCIAL_ICONS.FACEBOOK}
-
                             />
                             <SocialComponent
                                 icons={SOCIAL_ICONS.INSTAGRAM}
@@ -77,12 +72,8 @@ export default class BlogDetail extends React.Component {
                                 link={SOCIAL_URL.TWITTER}
                             />
                         </ul>
-
                     </div>
-
-
                 </div>
-
             </div>
         );
     }

@@ -48,7 +48,7 @@ export default class AddPost extends React.Component {
       timeStamp: new Date() + '',
     })
     console.log("hi", temp)
-    fetch(URLS.HEROKU + APIS.ADD_BLOG, {
+    fetch(URLS.LOCAL + APIS.ADD_BLOG, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
