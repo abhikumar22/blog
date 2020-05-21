@@ -29,7 +29,7 @@ export const SOCIAL_ICONS = {
   LINKEDIN: "fab fa-linkedin-in fa-fw",
   TWITTER: "fab fa-twitter fa-fw",
   STACKOVERFLOW: "fab fa-stack-overflow fa-fw",
-  INSTAGRAM: "fab fa-stack-overflow fa-fw",
+  INSTAGRAM: "fab fa-instagram fa-fw",
 };
 
 
