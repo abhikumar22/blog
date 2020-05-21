@@ -19,6 +19,7 @@ export default class App extends React.Component {
 
   componentDidMount() {
     fetch(URLS.HEROKU + APIS.GET_ALL_BLOG, {
+      crossDomain:true,
       method: 'POST',
       headers: {
         'Accept': 'application/json',

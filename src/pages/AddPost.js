@@ -49,6 +49,7 @@ export default class AddPost extends React.Component {
     })
     console.log("hi", temp)
     fetch(URLS.HEROKU + APIS.ADD_BLOG, {
+      crossDomain:true,
       method: 'POST',
       headers: {
         'Accept': 'application/json',
