@@ -18,7 +18,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch(URLS.LOCAL + APIS.GET_ALL_BLOG, {
+    fetch(URLS.HEROKU + APIS.GET_ALL_BLOG, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
