@@ -6,13 +6,12 @@ import history from '../routes/history';
 export default class BlogInListComponent extends React.Component {
     constructor(props) {
         super(props);
-        
         this.clickToPush = this.clickToPush.bind(this);
-      }
-    clickToPush=()=> {
-        history.push('/BlogDetail', { blogDetailValues:this.props.dataCurr })
+    }
+    clickToPush = () => {
+        history.push('/BlogDetail', { blogDetailValues: this.props.dataCurr })
         // alert("hi"+this.props.dataCurr)
-      }
+    }
     render() {
         return (
             <div className="item mb-5">
@@ -45,7 +44,7 @@ export default class BlogInListComponent extends React.Component {
                             {this.props.ContentSummary}
                         </div>
                         <div className="intro ">
-                          <button className="btn btn-warning" onClick={this.clickToPush}>Read More</button>
+                            <button className="btn btn-warning" onClick={this.clickToPush}>Read More</button>
                         </div>
                     </div>
                 </div>
