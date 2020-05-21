@@ -1,8 +1,9 @@
 import React from 'react';
 import '../css/theme-8.css';
-import { STRINGS, SOCIAL_URL, SOCIAL_ICONS, URLS, APIS } from '../utils/constants'
 import BlogInListComponent from '../components/BlogInListComponent'
 import SocialComponent from '../components/SocialComponent'
+import { STRINGS, SOCIAL_URL, SOCIAL_ICONS, URLS, APIS } from '../utils/constants'
+
 
 
 
@@ -147,9 +148,7 @@ export default class App extends React.Component {
 
           <div className="blog-list px-3">
             <div className="container">
-
               <hr />
-
               {this.state.blogArray.map((data, index) => {
                 return (
                   <BlogInListComponent
