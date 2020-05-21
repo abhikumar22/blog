@@ -1,8 +1,11 @@
 import React from "react";
 import { STRINGS } from '../utils/constants'
 
-import parse from 'html-react-parser';
 import history from '../routes/history';
+import '../css/blgliststyle.css'
+import { processedDate ,extractContent} from '../utils/HelperFunctions';
+
+
 export default class BlogInListComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -14,14 +17,15 @@ export default class BlogInListComponent extends React.Component {
     }
     render() {
         return (
-            <div className="item mb-5">
-                <div className="media">
+            <div className="item">
+                <div className="media py-2">
                     <div style={{
                         width: 110,
                         height: 110,
                         backgroundColor: 'blue'
-                    }} className={"mr-2"}>
+                    }} className={"mr-2 hideImage"}>
                         <img
+                        alt={"Blog Pic"}
                             // className="mr-3 img-fluid post-thumb d-none d-md-flex"
                             style={{ width: 110, height: 110 }}
                             src={this.props.ImageSrc}
@@ -34,20 +38,21 @@ export default class BlogInListComponent extends React.Component {
                             </a>
                         </h3>
                         <div className="meta mb-1">
-                            <span className="date">{this.props.DatePublished}</span>
+                            <span className="date">{"Published "+processedDate(this.props.DatePublished)}</span>
                             <span className="time">{this.props.ReadingTimeInterval + STRINGS.MIN_READ}</span>
                             {/* <span className="comment">
                                 <a href="#">{this.props.NoOfComments + STRINGS.COMMENTS}</a>
                             </span> */}
                         </div>
-                        <div className="intro">
-                            {this.props.ContentSummary}
+                        <div className="intro" >
+                           <p className="elipseEffect">{extractContent( this.props.ContentSummary)}</p> 
                         </div>
                         <div className="intro ">
-                            <button className="btn btn-warning" onClick={this.clickToPush}>Read More</button>
+                            <span className="cursorPointer text-primary" onClick={this.clickToPush}><u>Read More</u></span>
                         </div>
                     </div>
                 </div>
+                <hr/>
             </div>
         );
     }

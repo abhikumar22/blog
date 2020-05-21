@@ -1,0 +1,18 @@
+@media only screen and (max-width: 600px) {
+    .hideImage{
+        display: none;
+    }
+}
+
+.cursorPointer{
+    cursor: pointer;
+}
+
+.elipseEffect{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    text-align: justify;
+}   

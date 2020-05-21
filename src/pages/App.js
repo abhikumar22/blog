@@ -3,8 +3,6 @@ import '../css/theme-8.css';
 import { STRINGS, SOCIAL_URL, SOCIAL_ICONS, URLS, APIS } from '../utils/constants'
 import BlogInListComponent from '../components/BlogInListComponent'
 import SocialComponent from '../components/SocialComponent'
-import parse from 'html-react-parser';
-import history from '../routes/history';
 
 
 
@@ -34,7 +32,6 @@ export default class App extends React.Component {
       .then(res => {
         // console.log(json)
         this.setState({ blogArray: res }, () => {
-          console.log("ll", this.state.blogArray)
         })
         // history.push('/AllUserScreen', { uid: res.uid })
 
@@ -61,7 +58,9 @@ export default class App extends React.Component {
             <div id="navigation" className="collapse navbar-collapse flex-column">
               <div className="profile-section pt-3 pt-lg-0">
                 <img className="profile-image mb-3 rounded-circle mx-auto"
-                  src={require("../images/pp.jpeg")} />
+                  src={require("../images/pp.jpeg")}
+                  alt={"Pics"}
+                />
                 <div className="bio mb-3">
                   {STRINGS.PERSONAL_SUMMARY}
                 </div>
@@ -113,12 +112,12 @@ export default class App extends React.Component {
               </li>
             </ul> */}
               <div className="my-2 my-md-3">
-                <a className="btn btn-primary"
+                <span className="btn btn-primary"
                   data-toggle="modal" data-target="#myModal"
                 //  onClick={() => {
                 //   alert("hello")
                 // }}
-                >{STRINGS.GET_IN_TOUCH}</a>
+                >{STRINGS.GET_IN_TOUCH}</span>
               </div>
             </div>
           </nav>
@@ -146,27 +145,29 @@ export default class App extends React.Component {
             </div>
           </div>
 
-          <div className="blog-list px-3 py-5 p-md-5">
+          <div className="blog-list px-3">
             <div className="container">
 
+              <hr />
 
-              {this.state.blogArray.map((data,index) => {
+              {this.state.blogArray.map((data, index) => {
                 return (
-                    <BlogInListComponent
-                      ImageSrc={require("../images/blog/blog-post-thumb-1.jpg")}
-                      Title={data.title}
-                      ReadingTimeInterval={data.read_interval_in_minutes}
-                      NoOfComments={"5"}
-                      ContentSummary={parse(data.content_of_blog)}
-                      DatePublished={data.created_at}
-                      // ClickHandler={()=>this.clickToPush(data)}
-                      dataCurr={data}
-                    />
-                  )
-                })}
-                
+                  <BlogInListComponent
+                    key={index}
+                    ImageSrc={require("../images/blog/blog-post-thumb-1.jpg")}
+                    Title={data.title}
+                    ReadingTimeInterval={data.read_interval_in_minutes}
+                    NoOfComments={"5"}
+                    ContentSummary={data.content_of_blog}
+                    DatePublished={data.created_at}
+                    // ClickHandler={()=>this.clickToPush(data)}
+                    dataCurr={data}
+                  />
+                )
+              })}
 
-              
+
+
 
               {/* <nav className="blog-nav nav nav-justified my-5">
               <a className="nav-link-prev nav-item nav-link d-none rounded-left" href="blog-list.html">Previous<i
@@ -175,70 +176,70 @@ export default class App extends React.Component {
                 className="arrow-next fas fa-long-arrow-alt-right"></i></a>
             </nav> */}
             </div>
-            </div>
-            {/* <footer className="footer text-center py-2 theme-bg-dark">
-          <small className="copyright">Designed with <i className="fas fa-heart" style={{ backgroundColor: "#fb866a" }}></i> by <a
-            href="http://themes.3rdwavemedia.com">Xiaoying Riley</a> for developers</small>
-        </footer> */}
           </div>
-          {/* The Modal */}
-          <div className="modal fade" id="myModal">
-            <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content">
+          {/* <footer className="footer text-center py-2 theme-bg-dark">
+            <small className="copyright">Designed with <i className="fas fa-heart" style={{ backgroundColor: "#fb866a" }}></i> by <a
+              href="http://themes.3rdwavemedia.com">Xiaoying Riley</a> for developers</small>
+          </footer> */}
+        </div>
+        {/* The Modal */}
+        <div className="modal fade" id="myModal">
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content">
 
-                {/* <!-- Modal Header --> */}
-                <div className="modal-header text-center d-flex justify-content-center align-items-center">
-                  <h3 className="modal-title">CONTACT</h3>
-                  {/* <p className="">I'd Love To Hear From You</p> */}
-                  <button type="button" className="close" data-dismiss="modal">&times;</button>
-                </div>
+              {/* <!-- Modal Header --> */}
+              <div className="modal-header text-center d-flex justify-content-center align-items-center">
+                <h3 className="modal-title">CONTACT</h3>
+                {/* <p className="">I'd Love To Hear From You</p> */}
+                <button type="button" className="close" data-dismiss="modal">&times;</button>
+              </div>
 
-                {/* <!-- Modal body --> */}
-                <div className="modal-body">
-                  <form
-                    action="https://formspree.io/abhi.ckp1002@gmail.com"
-                    method="POST"
-                  >
-                    <div className="form-group">
-                      <input
-                        type="email"
-                        className="form-control"
-                        placeholder="Email"
-                        id="email"
-                        name="From"
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Subject"
-                        id="subject"
-                        name="subject"
-                        required
-                      />
-                    </div>
-                    <div className="form-group w-100">
-                      <textarea
-                        className="input1"
-                        style={{ width: '100%' }}
-                        name="Message"
-                        placeholder="Message"
-                        required
-                      ></textarea>
-                    </div>
-                    <div className="w-100 bg-warning justify-content-center">
-                      <button type="submit" className="btn btn-primary w-100">Submit</button>
+              {/* <!-- Modal body --> */}
+              <div className="modal-body">
+                <form
+                  action="https://formspree.io/abhi.ckp1002@gmail.com"
+                  method="POST"
+                >
+                  <div className="form-group">
+                    <input
+                      type="email"
+                      className="form-control"
+                      placeholder="Email"
+                      id="email"
+                      name="From"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Subject"
+                      id="subject"
+                      name="subject"
+                      required
+                    />
+                  </div>
+                  <div className="form-group w-100">
+                    <textarea
+                      className="input1"
+                      style={{ width: '100%' }}
+                      name="Message"
+                      placeholder="Message"
+                      required
+                    ></textarea>
+                  </div>
+                  <div className="w-100 bg-warning justify-content-center">
+                    <button type="submit" className="btn btn-primary w-100">Submit</button>
 
-                    </div>
+                  </div>
 
-                  </form>
-                </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
+      </div>
     );
   }
 }
