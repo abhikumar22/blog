@@ -3,7 +3,7 @@ import { STRINGS } from '../utils/constants'
 
 import history from '../routes/history';
 import '../css/blgliststyle.css'
-import { processedDate ,extractContent} from '../utils/HelperFunctions';
+import { processedDate, extractContent } from '../utils/HelperFunctions';
 
 
 export default class BlogInListComponent extends React.Component {
@@ -25,34 +25,38 @@ export default class BlogInListComponent extends React.Component {
                         backgroundColor: 'blue'
                     }} className={"mr-2 hideImage"}>
                         <img
-                        alt={"Blog Pic"}
+                            alt={"Blog Pic"}
                             // className="mr-3 img-fluid post-thumb d-none d-md-flex"
                             style={{ width: 110, height: 110 }}
                             src={this.props.ImageSrc}
                         />
                     </div>
                     <div className="media-body">
-                        <h3 className="title mb-1">
-                            <a href="blog-post.html">
+                        <h3 className="title mb-1 cursorPointer text-primary"
+                            onClick={this.clickToPush}
+                        >
+                            <span
+                            >
                                 {this.props.Title}
-                            </a>
+                            </span>
                         </h3>
                         <div className="meta mb-1">
-                            <span className="date">{"Published "+processedDate(this.props.DatePublished)}</span>
+                            <span className="date">{"Published " + processedDate(this.props.DatePublished)}</span>
                             <span className="time">{this.props.ReadingTimeInterval + STRINGS.MIN_READ}</span>
                             {/* <span className="comment">
                                 <a href="#">{this.props.NoOfComments + STRINGS.COMMENTS}</a>
                             </span> */}
                         </div>
-                        <div className="intro" >
-                           <p className="elipseEffect">{extractContent( this.props.ContentSummary)}</p> 
+                        <div className="" >
+                            <p className="elipseEffect">{extractContent(this.props.ContentSummary)}</p>
+                            {/* <span className="cursorPointer text-primary" onClick={this.clickToPush}><u>Read More</u></span> */}
                         </div>
-                        <div className="intro ">
+                        {/* <div className="mt-0" style={{marginTop:-9}}>
                             <span className="cursorPointer text-primary" onClick={this.clickToPush}><u>Read More</u></span>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
-                <hr/>
+                <hr />
             </div>
         );
     }

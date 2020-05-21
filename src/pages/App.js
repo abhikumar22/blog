@@ -124,7 +124,7 @@ export default class App extends React.Component {
         </div>
         <div className="main-wrapper">
 
-          <div className="cta-section theme-bg-light py-5">
+          <div className="cta-section theme-bg-light py-5 px-3">
             <div className="container text-center">
               <h2 className="heading">{STRINGS.HEADLINE}</h2>
               <div className="intro">{STRINGS.SUBSCRIBE_MESSAGE}</div>
