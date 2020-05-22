@@ -5,6 +5,7 @@ import SocialComponent from '../components/SocialComponent'
 import { STRINGS, SOCIAL_URL, SOCIAL_ICONS, URLS, APIS } from '../utils/constants'
 import HeaderComponent from '../components/HeaderComponent';
 
+import FooterComponent from '../components/FooterComponent';
 
 
 
@@ -19,7 +20,7 @@ export default class App extends React.Component {
 
   componentDidMount() {
     fetch(URLS.HEROKU + APIS.GET_ALL_BLOG, {
-      "Access-Control-Allow-Origin":'*',
+      "Access-Control-Allow-Origin": '*',
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -127,9 +128,9 @@ export default class App extends React.Component {
         </div>
         <div className="main-wrapper">
 
-          <div className="blog-list px-5 pt-3 pb-5">
-            <div className="container">
-              <HeaderComponent/>
+          <div className="blog-list px-5 pt-3 pb-1">
+            <div className="container mb-2">
+              <HeaderComponent />
               <hr />
               {this.state.blogArray.map((data, index) => {
                 return (
@@ -157,7 +158,10 @@ export default class App extends React.Component {
                 className="arrow-next fas fa-long-arrow-alt-right"></i></a>
             </nav> */}
             </div>
+            {/* <FooterComponent /> */}
           </div>
+         
+
           {/* <footer className="footer text-center py-2 theme-bg-dark">
             <small className="copyright">Designed with <i className="fas fa-heart" style={{ backgroundColor: "#fb866a" }}></i> by <a
               href="http://themes.3rdwavemedia.com">Xiaoying Riley</a> for developers</small>
@@ -212,9 +216,7 @@ export default class App extends React.Component {
                   </div>
                   <div className="w-100 justify-content-center">
                     <button type="submit" className="btn btn-primary w-100">Submit</button>
-
                   </div>
-
                 </form>
               </div>
             </div>
