@@ -1,20 +1,20 @@
 import React from "react";
 import SocialComponent from '../components/SocialComponent'
-import { STRINGS, SOCIAL_URL, SOCIAL_ICONS, URLS, APIS } from '../utils/constants'
+import { STRINGS, SOCIAL_URL, SOCIAL_ICONS } from '../utils/constants'
 export default class FooterComponent extends React.Component {
     render() {
         return (
             <div>
                 <div
                     style={{ width: '100%', margin: 0, padding: 0, }}
-                    className="row mx-auto mb-3 mt-3"
+                    className="row mb-3 mt-3 justify-content-center aling-items-center"
                 >
                     <div
-                        className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
-                        style={{ fontSize: 12, margin: 0, padding: 0, wordWrap: 'break-word' }}
+                        className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-center"
+                        style={{ fontSize: 12, margin: 0, padding: 0 }}
                     >
                         <p
-                            style={{ width: '98%', margin: 0, padding: 0, textAlign: 'justify' }}
+                            style={{  margin: 0, padding: 0 }}
                         >
                             {STRINGS.PERSONAL_NOTE}
                         </p>

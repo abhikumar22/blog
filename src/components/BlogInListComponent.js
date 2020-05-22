@@ -17,7 +17,7 @@ export default class BlogInListComponent extends React.Component {
     }
     render() {
         return (
-            <div className="item">
+            <div className="item col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0 m-0">
                 <div className="media py-2">
                     <div style={{
                         width: 110,
@@ -31,7 +31,7 @@ export default class BlogInListComponent extends React.Component {
                             src={this.props.ImageSrc}
                         />
                     </div>
-                    <div className="media-body">
+                    <div className="media-body col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0 m-0">
                         <h3 className="title mb-1 cursorPointer text-primary"
                             onClick={this.clickToPush}
                         >
@@ -47,7 +47,10 @@ export default class BlogInListComponent extends React.Component {
                                 <a href="#">{this.props.NoOfComments + STRINGS.COMMENTS}</a>
                             </span> */}
                         </div>
-                        <div className="" >
+                        <div
+                            style={{ width: '100%'}}
+                        // className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10"
+                        >
                             <p className="elipseEffect">{extractContent(this.props.ContentSummary)}</p>
                             {/* <span className="cursorPointer text-primary" onClick={this.clickToPush}><u>Read More</u></span> */}
                         </div>

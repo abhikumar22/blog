@@ -6,8 +6,8 @@ export const STRINGS = {
   BLOG_SUMMARY: "Loremmm ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus....",
   GET_IN_TOUCH: "Get in Touch",
   HEADLINE: "Welcome Techies !! To My Blog",
-  SUBSCRIBE_MESSAGE: "Subscribe and get my latest blog post in your inbox",
-  KNOW_MORE_ABOUT_ME: "Want to know more about me",
+  SUBSCRIBE_MESSAGE: "Subscribe to abhikumar.xyz",
+  KNOW_MORE_ABOUT_ME: "Connect with me",
   PERSONAL_NOTE: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 
 };

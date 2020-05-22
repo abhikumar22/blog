@@ -3,8 +3,6 @@ import '../css/theme-8.css';
 import BlogInListComponent from '../components/BlogInListComponent'
 import SocialComponent from '../components/SocialComponent'
 import { STRINGS, SOCIAL_URL, SOCIAL_ICONS, URLS, APIS } from '../utils/constants'
-import history from '../routes/history';
-import { processedDate } from '../utils/HelperFunctions';
 import HeaderComponent from '../components/HeaderComponent';
 
 
@@ -69,11 +67,12 @@ export default class App extends React.Component {
                   {STRINGS.PERSONAL_SUMMARY}
                 </div>
                 <div className="bio mb-3">
-                  <a
+                  <span
                   // href="about.html"
-                  >{STRINGS.KNOW_MORE_ABOUT_ME}</a>
+
+                  ><h5 className="text-white">{STRINGS.KNOW_MORE_ABOUT_ME}</h5></span>
                 </div>
-                <ul className="social-list list-inline py-3 mx-auto">
+                <ul className="social-list list-inline pb-3 mx-auto">
                   <SocialComponent
                     link={SOCIAL_URL.LINKEDIN}
                     icons={SOCIAL_ICONS.LINKEDIN}
@@ -211,7 +210,7 @@ export default class App extends React.Component {
                       required
                     ></textarea>
                   </div>
-                  <div className="w-100 bg-warning justify-content-center">
+                  <div className="w-100 justify-content-center">
                     <button type="submit" className="btn btn-primary w-100">Submit</button>
 
                   </div>
