@@ -8,7 +8,7 @@ export const STRINGS = {
   HEADLINE: "Welcome Techies !! To My Blog",
   SUBSCRIBE_MESSAGE: "Subscribe to abhikumar.xyz",
   KNOW_MORE_ABOUT_ME: "Connect with me",
-  PERSONAL_NOTE: "Hey there, Abhishek here. I works as a software engineer with over 2+ year of experience in Software Development & Project implementation, mainly focusing on business analytics, design an development of large - scale applications. Passionate about problem solving, Algorithms and Data Structures.",
+  PERSONAL_NOTE: "Hey there, Abhishek here. I works as a software engineer with over 2+ year of experience in Software Development & Project implementation, mainly focusing on business analytics, design and development of large - scale applications. Passionate about problem solving, Algorithms and Data Structures.",
 
 };
 
