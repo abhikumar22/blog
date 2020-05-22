@@ -7,7 +7,9 @@ export const STRINGS = {
   GET_IN_TOUCH: "Get in Touch",
   HEADLINE: "Welcome Techies !! To My Blog",
   SUBSCRIBE_MESSAGE: "Subscribe and get my latest blog post in your inbox",
-  KNOW_MORE_ABOUT_ME: "Want to know more about me"
+  KNOW_MORE_ABOUT_ME: "Want to know more about me",
+  PERSONAL_NOTE: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+
 };
 
 export const VALUES = {

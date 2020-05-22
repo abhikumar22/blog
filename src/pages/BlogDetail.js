@@ -23,7 +23,7 @@ export default class BlogDetail extends React.Component {
     render() {
         return (
             <div style={{ width: '100%', height: '100%' }} className="App">
-                <div className="col-10 col-sm-10 col-md-6 col-lg-6 col-xl-6" style={{ margin: 'auto', marginTop: 30 }}>
+                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style={{ margin: 'auto', marginTop: 30 }}>
                     <div>
                         <h4 onClick={() => {
                             history.push('/')
@@ -43,23 +43,66 @@ export default class BlogDetail extends React.Component {
 
                     </div>
                     <hr />
+
+
+                    <div className="py-3">
+                        <div className="container text-center">
+                            {/* <h2 className="heading">{STRINGS.HEADLINE}</h2> */}
+                            <div className="intro"><strong>{STRINGS.SUBSCRIBE_MESSAGE}</strong></div>
+                            <form
+                                action="https://buttondown.email/api/emails/embed-subscribe/abhikumar22"
+                                method="post"
+                                target="popupwindow"
+                                onsubmit="window.open('https://buttondown.email/abhikumar22', 'popupwindow')"
+                            >
+                                <div
+                                    className="py-2"
+                                >
+                                    <div className="px-3" >
+                                        <input className="py-2 col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10" placeholder="Your email (you@example.com)" type="email" name="email" id="bd-email" />
+                                    </div>
+                                    <div className="px-3 mt-4" >
+                                        <button className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 btn btn-primary" type="submit" value="Subscribe" >Join</button>
+                                    </div>
+                                    {/* <input type="hidden" value="1" name="embed" /> */}
+                                    {/* <p>
+                                        <a href="https://buttondown.email" target="_blank">Powered by Buttondown.</a>
+                                    </p> */}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <hr />
                     <div
-                        // className="text-center"
+                        // className="text-center col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 row"
+                        style={{ width: '100%', margin: 0, padding: 0 }}
+                        className="row mx-auto mb-3"
                     >
-                        <ul className="social-list list-inline py-3 mx-auto row">
-                            {/* <li className="list-inline-item"> */}
-                            <div style={{ width: 50, height: 50, borderRadius: 30 }}>
-                                <img className="profile-image mb-3 rounded-circle mx-auto"
-                                    src={require("../images/pp.jpeg")}
-                                    alt={"Pics"}
-                                    style={{ width: 50, height: 50, borderRadius: 30 }}
-                                />
-                            </div>
-                            <div className="ml-3">
-                                <footer>
-                                    <small>&copy; Copyright 2020 Abhishek Kumar</small>
-                                </footer>
-                                {/* </li> */}
+                        {/* <ul className="row bg-secondary"> */}
+                        <div
+                            className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-center "
+                            style={{ justifyContent: 'center', alignItems: 'center', margin: 0, padding: 0 }}
+                        >
+                            <img className="profile-image rounded-circle mx-auto"
+                                src={require("../images/pp.jpeg")}
+                                alt={"Pics"}
+                                style={{ width: 50, height: 50, borderRadius: 30, margin: 0, padding: 0 }}
+                            />
+                        </div>
+                        <div
+                            className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10"
+                            style={{ fontSize: 12, textAlign: 'justify', margin: 0, padding: 0 }}
+                        >
+                            <p
+                                style={{ width: '98%', margin: 0, padding: 0 }}
+                            >
+                                {STRINGS.PERSONAL_NOTE}
+                            </p>
+                        </div>
+
+                        <div className="social-list list-inline mt-3 mx-auto text-center pb-3">
+                            <div className=" w-100">
                                 <SocialComponent
                                     link={SOCIAL_URL.LINKEDIN}
                                     icons={SOCIAL_ICONS.LINKEDIN}
@@ -84,10 +127,13 @@ export default class BlogDetail extends React.Component {
                                     icons={SOCIAL_ICONS.TWITTER}
                                     link={SOCIAL_URL.TWITTER}
                                 />
-
                             </div>
-
-                        </ul>
+                            <hr />
+                            <footer>
+                                <small>&copy; <strong>Copyright 2020 Abhishek Kumar</strong></small>
+                            </footer>
+                        </div>
+                   
                     </div>
                 </div>
             </div>

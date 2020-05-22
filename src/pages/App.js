@@ -125,27 +125,6 @@ export default class App extends React.Component {
         </div>
         <div className="main-wrapper">
 
-          <div className="cta-section theme-bg-light py-5 px-3">
-            <div className="container text-center">
-              <h2 className="heading">{STRINGS.HEADLINE}</h2>
-              <div className="intro">{STRINGS.SUBSCRIBE_MESSAGE}</div>
-              <form className="signup-form form-inline justify-content-center pt-3">
-                <div className="form-group">
-                  <label className="sr-only"
-                  // for="semail"
-                  >Your email</label>
-                  <input type="email" id="semail" name="semail1" className="form-control mr-md-1 semail"
-                    placeholder="Enter email" />
-                </div>
-              </form>
-              <button onClick={() => {
-                // history.push('/addpost', {
-                // })
-                alert("Feature Coming Soon")
-              }} type="submit" className="btn btn-primary mt-3">Subscribe</button>
-            </div>
-          </div>
-
           <div className="blog-list px-3">
             <div className="container">
               <hr />
