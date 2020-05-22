@@ -1,12 +1,10 @@
 import React from 'react';
 import parse from 'html-react-parser';
-
 import '../css/blgdetail.css'
 import { processedDate } from '../utils/HelperFunctions';
-
-import SocialComponent from '../components/SocialComponent'
 import { STRINGS, SOCIAL_URL, SOCIAL_ICONS, URLS, APIS } from '../utils/constants'
-import history from '../routes/history';
+import FooterComponent from '../components/FooterComponent';
+import HeaderComponent from '../components/HeaderComponent';
 
 
 
@@ -24,15 +22,7 @@ export default class BlogDetail extends React.Component {
         return (
             <div style={{ width: '100%', height: '100%' }} className="App">
                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style={{ margin: 'auto', marginTop: 30 }}>
-                    <div>
-                        <h4 onClick={() => {
-                            history.push('/')
-
-                        }} className="cursorPointer" style={{ margin: 0, padding: 0, textAlign: 'justify' }}><strong>abhikumar.xyz</strong></h4>
-                        <div style={{ textAlign: 'justify' }} className="">
-                            <p style={{ margin: 0, padding: 0, fontSize: 14 }}>Tech | Motivation | Part Time Chef</p>
-                        </div>
-                    </div>
+                    <HeaderComponent/>
                     <hr style={{ marginTop: 20 }} />
                     <div style={{ marginTop: 20, margin: 0, padding: 0, }}>
                         <h2 style={{ margin: 0, padding: 0, }}>{this.props.location.state.blogDetailValues.title}</h2>
@@ -75,66 +65,16 @@ export default class BlogDetail extends React.Component {
 
                     <hr />
                     <div
-                        // className="text-center col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 row"
-                        style={{ width: '100%', margin: 0, padding: 0 }}
-                        className="row mx-auto mb-3"
+                        className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center "
+                        style={{ justifyContent: 'center', alignItems: 'center', margin: 0, padding: 0 }}
                     >
-                        {/* <ul className="row bg-secondary"> */}
-                        <div
-                            className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-center "
-                            style={{ justifyContent: 'center', alignItems: 'center', margin: 0, padding: 0 }}
-                        >
-                            <img className="profile-image rounded-circle mx-auto"
-                                src={require("../images/pp.jpeg")}
-                                alt={"Pics"}
-                                style={{ width: 50, height: 50, borderRadius: 30, margin: 0, padding: 0 }}
-                            />
-                        </div>
-                        <div
-                            className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10"
-                            style={{ fontSize: 12, textAlign: 'justify', margin: 0, padding: 0 }}
-                        >
-                            <p
-                                style={{ width: '98%', margin: 0, padding: 0 }}
-                            >
-                                {STRINGS.PERSONAL_NOTE}
-                            </p>
-                        </div>
-
-                        <div className="social-list list-inline mt-3 mx-auto text-center pb-3">
-                            <div className=" w-100">
-                                <SocialComponent
-                                    link={SOCIAL_URL.LINKEDIN}
-                                    icons={SOCIAL_ICONS.LINKEDIN}
-                                />
-                                <SocialComponent
-                                    link={SOCIAL_URL.GITHUB}
-                                    icons={SOCIAL_ICONS.GITHUB}
-                                />
-                                <SocialComponent
-                                    link={SOCIAL_URL.STACKOVERFLOW}
-                                    icons={SOCIAL_ICONS.STACKOVERFLOW}
-                                />
-                                <SocialComponent
-                                    link={SOCIAL_URL.FACEBOOK}
-                                    icons={SOCIAL_ICONS.FACEBOOK}
-                                />
-                                <SocialComponent
-                                    icons={SOCIAL_ICONS.INSTAGRAM}
-                                    link={SOCIAL_URL.INSTAGRAM}
-                                />
-                                <SocialComponent
-                                    icons={SOCIAL_ICONS.TWITTER}
-                                    link={SOCIAL_URL.TWITTER}
-                                />
-                            </div>
-                            <hr />
-                            <footer>
-                                <small>&copy; <strong>Copyright 2020 Abhishek Kumar</strong></small>
-                            </footer>
-                        </div>
-                   
-                    </div>
+                        <img className="profile-image rounded-circle mx-auto"
+                            src={require("../images/pp.jpeg")}
+                            alt={"Pics"}
+                            style={{ width: 50, height: 50, borderRadius: 30, margin: 0, padding: 0 }}
+                        />
+                    </div>  
+                    <FooterComponent/>         
                 </div>
             </div>
         );

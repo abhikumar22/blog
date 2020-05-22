@@ -5,6 +5,7 @@ import SocialComponent from '../components/SocialComponent'
 import { STRINGS, SOCIAL_URL, SOCIAL_ICONS, URLS, APIS } from '../utils/constants'
 import history from '../routes/history';
 import { processedDate } from '../utils/HelperFunctions';
+import HeaderComponent from '../components/HeaderComponent';
 
 
 
@@ -127,17 +128,9 @@ export default class App extends React.Component {
         </div>
         <div className="main-wrapper">
 
-          <div className="blog-list px-3">
+          <div className="blog-list px-5 pt-3 pb-5">
             <div className="container">
-              <div className="mt-3">
-                <h4 onClick={() => {
-                  history.push('/')
-
-                }} className="cursorPointer" style={{ margin: 0, padding: 0, textAlign: 'justify' }}><strong>abhikumar.xyz</strong></h4>
-                <div style={{ textAlign: 'justify' }} className="">
-                  <p style={{ margin: 0, padding: 0, fontSize: 14 }}>Tech | Motivation | Part Time Chef</p>
-                </div>
-              </div>
+              <HeaderComponent/>
               <hr />
               {this.state.blogArray.map((data, index) => {
                 return (
