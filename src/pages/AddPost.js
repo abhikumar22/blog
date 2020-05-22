@@ -50,6 +50,7 @@ export default class AddPost extends React.Component {
     })
     console.log("hi", temp)
     fetch(URLS.HEROKU + APIS.ADD_BLOG, {
+      "Access-Control-Allow-Origin":'*',
       method: 'POST',
       headers: {
         'Accept': 'application/json',

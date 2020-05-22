@@ -37,7 +37,8 @@ export const SOCIAL_ICONS = {
 
 export const URLS = {
   LOCAL: 'http://127.0.0.1:8000/',
-  HEROKU: 'https://chatappbackend22.herokuapp.com/'
+  HEROKU: 'https://chatappbackend22.herokuapp.com/',
+  PROXYURL :'https://cors-anywhere.herokuapp.com/',
 };
 
 export const APIS = {
