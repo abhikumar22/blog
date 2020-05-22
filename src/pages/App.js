@@ -127,6 +127,25 @@ export default class App extends React.Component {
 
           <div className="blog-list px-3">
             <div className="container">
+            <div>
+                        <h4 onClick={() => {
+                            history.push('/')
+
+                        }} className="cursorPointer" style={{ margin: 0, padding: 0, textAlign: 'justify' }}><strong>abhikumar.xyz</strong></h4>
+                        <div style={{ textAlign: 'justify' }} className="">
+                            <p style={{ margin: 0, padding: 0, fontSize: 14 }}>Tech | Motivation | Part Time Chef</p>
+                        </div>
+                    </div>
+                    <hr style={{ marginTop: 20 }} />
+                    <div style={{ marginTop: 20, margin: 0, padding: 0, }}>
+                        <h2 style={{ margin: 0, padding: 0, }}>{this.props.location.state.blogDetailValues.title}</h2>
+                        <div>
+                            <p style={{ margin: 0, padding: 0, textAlign: 'justify' }} className="text-muted">Published {processedDate(this.props.location.state.blogDetailValues.created_at)} • {this.props.location.state.blogDetailValues.read_interval_in_minutes} min read</p>
+                        </div>
+                        <p style={{ marginTop: 20, textAlign: 'justify' }}>{parse(this.props.location.state.blogDetailValues.content_of_blog)}</p>
+
+                    </div>
+                    <hr />
               <hr />
               {this.state.blogArray.map((data, index) => {
                 return (
