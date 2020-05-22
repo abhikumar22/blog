@@ -42,7 +42,6 @@ export default class AddPost extends React.Component {
   }
   addPost(content, title) {
     let temp = JSON.stringify({
-      mode:'no-cors',
       title: title,
       content: content,
       timeInterval: this.state.time_interval,
