@@ -4,16 +4,16 @@ import BlogInListComponent from '../components/BlogInListComponent'
 import SocialComponent from '../components/SocialComponent'
 import { STRINGS, SOCIAL_URL, SOCIAL_ICONS, URLS, APIS } from '../utils/constants'
 import HeaderComponent from '../components/HeaderComponent';
-
-import FooterComponent from '../components/FooterComponent';
-
+// import { BoxLoading } from "react-loadingg";
 
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      blogArray: []
+      blogArray: [],
+      loaded: true,
+      errCaused: false
     };
     // this.clickToPush = this.clickToPush.bind(this);
   }
@@ -36,17 +36,21 @@ export default class App extends React.Component {
         // console.log(json)
         this.setState({ blogArray: res }, () => {
         })
+        this.setState({
+          loaded: false,
+          errCaused: false,
+        });
         // history.push('/AllUserScreen', { uid: res.uid })
 
       })
-      .catch(error => console.log('Authorization failed : ' + error.message));
+      .catch(error => {
+        this.setState({
+          loaded: false,
+          errCaused: true
+        });
+        console.log('Authorization failed : ' + error.message)
+      });
   }
-
-  // clickToPush=(data)=> {
-  //   // console.log("pppp",data)
-  //   history.push('/BlogDetail', { blogDetailValues:data })
-  // }
-
 
   render() {
     return (
@@ -132,21 +136,29 @@ export default class App extends React.Component {
             <div className="container mb-2">
               <HeaderComponent />
               <hr />
-              {this.state.blogArray.map((data, index) => {
-                return (
-                  <BlogInListComponent
-                    key={index}
-                    ImageSrc={require("../images/blog/blog-post-thumb-1.jpg")}
-                    Title={data.title}
-                    ReadingTimeInterval={data.read_interval_in_minutes}
-                    NoOfComments={"5"}
-                    ContentSummary={data.content_of_blog}
-                    DatePublished={data.created_at}
-                    // ClickHandler={()=>this.clickToPush(data)}
-                    dataCurr={data}
-                  />
-                )
-              })}
+              {this.state.loaded === false ?
+                this.state.blogArray.map((data, index) => {
+                  return (
+                    <BlogInListComponent
+                      key={index}
+                      ImageSrc={require("../images/blog/blog-post-thumb-1.jpg")}
+                      Title={data.title}
+                      ReadingTimeInterval={data.read_interval_in_minutes}
+                      NoOfComments={"5"}
+                      ContentSummary={data.content_of_blog}
+                      DatePublished={data.created_at}
+                      // ClickHandler={()=>this.clickToPush(data)}
+                      dataCurr={data}
+                    />
+                  )
+                })
+                : <div
+                  className="justify-content-center aling-items-center"
+                  style={{ width: '100%', height: '100%' }}>
+                  <div className="mx-auto"> <p><strong>Loading ....</strong></p></div>
+                  {/* <BoxLoading className="mx-auto" color={"yellow"} /> */}
+                </div>
+              }
 
 
 
@@ -160,7 +172,7 @@ export default class App extends React.Component {
             </div>
             {/* <FooterComponent /> */}
           </div>
-         
+
 
           {/* <footer className="footer text-center py-2 theme-bg-dark">
             <small className="copyright">Designed with <i className="fas fa-heart" style={{ backgroundColor: "#fb866a" }}></i> by <a
